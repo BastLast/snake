@@ -1,7 +1,7 @@
 class Model {
   constructor() {
-    this.serpent = new Serpent();
     this.grille = new Grille();
-    this.Fruit = new Fruit();
+    this.serpent = new Serpent();
+    this.fruit = new Case(7,12,true,false);
   }
 }

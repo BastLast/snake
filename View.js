@@ -12,25 +12,25 @@ class View {
         var image = new Image();
         matrix[i][j] = image;
         if(i==7 && (j==1 || j==2 || j==3)){
-          var case = new Case(i,j,false,true);
+          var c = new Case(i,j,false,true);
         }
         if(i==7 && j==12) {
-          var case = new Case(i,j,true,false);
+          var c = new Case(i,j,true,false);
         }
 
-        var case = new Case(i,j,false,false);
+        var c = new Case(i,j,false,false);
 
         if(i == 0 || j == 0) image.src = "/ressources/wall.png";
-        if(!case.serpent && !case.fruit && i != 0 && j != 0) image.src = "/ressources/boardgame.png";
-        if(case.serpent) {
-          if(serpent.getTete == case){
+        if(!c.serpent && !c.fruit && i != 0 && j != 0) image.src = "/ressources/boardgame.png";
+        if(c.serpent) {
+          if(serpent.getTete == c){
               image.src = "/ressources/headsnake.png";
           }else{
             image.src = "/ressources/bodysnake.png";
           }
         }
 
-        if(case.fruit) image.src = "/ressources/food.png";
+        if(c.fruit) image.src = "/ressources/food.png";
 
       }
     }

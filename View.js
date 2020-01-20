@@ -6,8 +6,9 @@ class View {
    * Affiche le jeu pour l'utilisateur
    */
   afficherLeJeu(grille,serpent,fruit) {
-    var matrix = new Array();
+    var matrix = [];
     for(var i = 0; i < grille.size; i++ ){
+      matrix[i] = [];
       for(var j = 0; j < grille.size; j++){
         var image = new Image();
         matrix[i][j] = image;
@@ -32,6 +33,7 @@ class View {
 
         if(c.fruit) image.src = "/ressources/food.png";
 
+        document.body.appendChild(image);
       }
     }
 

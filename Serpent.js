@@ -73,5 +73,7 @@ class Serpent {
         }
     }
 
-    avancer()
+    avancer(){
+        
+    }
 }

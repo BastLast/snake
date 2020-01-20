@@ -43,28 +43,28 @@ class Serpent {
     }
 
     /**
-     * 
+     * Permet de changer la direction dans laquelle le serpent va
      * @param {*} nouvelleDirection 
      */
-    changerDirection(nouvelleDirection) { 
+    changerDirection(nouvelleDirection) {
         switch (nouvelleDirection) {
             case "est":
-                if(this.direction != "ouest"){
+                if (this.direction != "ouest") {
                     this.direction = nouvelleDirection;
                 }
                 break;
             case "sud":
-                if(this.direction != "nord"){
+                if (this.direction != "nord") {
                     this.direction = nouvelleDirection;
                 }
                 break;
             case "nord":
-                if(this.direction != "sud"){
+                if (this.direction != "sud") {
                     this.direction = nouvelleDirection;
                 }
                 break;
             case "ouest":
-                if(this.direction != "est"){
+                if (this.direction != "est") {
                     this.direction = nouvelleDirection;
                 }
                 break;
@@ -73,7 +73,32 @@ class Serpent {
         }
     }
 
-    avancer(){
-        
+    /**
+     * Permet de verifier que le serpent se mord la queue
+     */
+    seMordQueue() {
+        let tete = this.getTete();
+        let count = 0
+        for (let i = 0; i < this.positions.length; i++) { //recherche de la tête dans le serpent
+            const element = array[i];
+            if (element == tete) {
+                count++;
+            }
+        }
+        return count > 1; //la tête a été trouvée plus d'une fois
+    }
+
+    /**
+     * Permet de faire avancer la queue du serpent
+     */
+    avancerQueue() {
+        this.positions.shift();
+    }
+
+    /**
+     * Augmente la longueur du serpent quand il mange un fruit
+     */
+    manger(){
+        this.size++;
     }
 }

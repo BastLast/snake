@@ -12,14 +12,14 @@ class View {
       for(var j = 0; j < grille.size; j++){
         var image = new Image();
         matrix[i][j] = image;
+        var c = new Case(i,j,false,false);
+
         if(i==7 && (j==1 || j==2 || j==3)){
           var c = new Case(i,j,false,true);
         }
         if(i==7 && j==12) {
           var c = new Case(i,j,true,false);
         }
-
-        var c = new Case(i,j,false,false);
 
         if(i == 0 || j == 0 || i == grille.size -1 || j == grille.size -1) image.src = "ressources/wall.png";
         if(!c.serpent && !c.fruit && i != 0 && j != 0 && i != grille.size -1 && j != grille.size -1) image.src = "ressources/boardgame.png";
@@ -32,6 +32,9 @@ class View {
         }
 
         if(c.fruit) image.src = "/ressources/food.png";
+
+        image.width= 30;
+        image.height =30;
 
         document.body.appendChild(image);
       }

@@ -19,7 +19,7 @@ class Model {
       } else {
         // Le serpent mange le fruit.
         this.serpent.manger();
-        //TODO : Faire apparaitre un nouveau fruit.
+        this.genererFruit();
       }
     }
   }
@@ -37,4 +37,28 @@ class Model {
   serpentMangeFruit() {
     return this.serpent.getTete().posX == this.fruit.posX && this.serpent.getTete().posY == this.fruit.posY;
   }
+
+  /**
+   * Generer un fruit à une position aléatoire sur la grille (mais pas sur le serpent)
+   */
+  genererFruit() {
+    let nouveauFruit;
+    do {
+      let nouveauPosX = this.genererNombreAleatoire(0, this.grille.size - 1);
+      let nouveauPosY = this.genererNombreAleatoire(0, this.grille.size - 1);
+      nouveauFruit = new Case(nouveauPosX, nouveauPosY, true, false);
+    }
+    while (this.serpent.faisPartiDuSerpent(nouveauFruit))
+    this.fruit = nouveauFruit //le fruit a été placé sur une case qui n'est pas sur le serpent
+  }
+
+
+  /**
+   * Generer un nombre entier aléatoire
+   * @param {*} min 
+   * @param {*} max 
+   */
+  genererNombreAleatoire(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+  };
 }

@@ -98,7 +98,22 @@ class Serpent {
     /**
      * Augmente la longueur du serpent quand il mange un fruit
      */
-    manger(){
+    manger() {
         this.size++;
+    }
+
+    /**
+     * Permet de verifier qu'une case donnée en parametre fais parti du serpent
+     * @param {*} c 
+     */
+    faisPartiDuSerpent(c) {
+        let count = 0
+        for (let i = 0; i < this.positions.length; i++) { //recherche de la case dans le serpent
+            const element = array[i];
+            if (element.posX == c.posX && element.posY == c.posY) {
+                count++;
+            }
+        }
+        return count > 0; //la case a été trouvée
     }
 }

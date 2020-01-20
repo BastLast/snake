@@ -31,10 +31,11 @@ class View {
           }
         }
 
-        if(c.fruit) image.src = "/ressources/food.png";
+        if(c.fruit) image.src = "ressources/food.png";
 
         image.width= 30;
         image.height =30;
+        if(j == 0){ document.body.appendChild(document.createElement('br')); }
 
         document.body.appendChild(image);
       }

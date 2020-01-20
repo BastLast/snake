@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <script src="Controller.js"></script>
+    <script src="Model.js"></script>
+    <script src="View.js"></script>
+    <script src="Grille.js"></script>
+    <script src="Serpent.js"></script>
+    <script src="Case.js"></script>
+    <title>Snake game</title>
+  </head>
+  <body>
+    <div id="body"></div>
+
+    <script type="text/javascript">
+
+      const app = new Controller(new Model(), new View());
+      app.afficherLeJeu();
+
+    </script>
+  </body>
+
+</html>

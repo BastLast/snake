@@ -9,29 +9,66 @@ class View {
  * @param {*} matrice
  */
   afficherLeJeu(matrice) {
-    var jeu = document.getElementById("jeu");
+    //var jeu = document.getElementById("jeu");
     var canvas = document.getElementById("canvas");
+    canvas.width = document.getElementById("jeu").clientWidth;
+    canvas.length = document.getElementById("jeu").clientHeight;
     var ctx = canvas.getContext("2d");
-    ctx.restore();
-    ctx.beginPath();
 
-    for (var i = 0; i < matrice.length; i++) {
-      for (var j = 0; j < matrice.length; j++) {
-        if(i==0) jeu.appendChild(document.createElement('br'));
-        switch (matrice[j][i]) {
-            case "X": ctx.fillRect(i*5,j*5,50,50); ctx.fillStyle = "green";
-            break;
-            case "S":  ctx.fillRect(i*5,j*5,50,50); ctx.fillStyle = "yellow";
-            break;
-            case "T":  ctx.fillRect(i*5, j*5,50,50); ctx.fillStyle = "yellow";
-            break;
-            case "F":  ctx.fillRect(i*5, j*5,50,50); ctx.fillStyle = "red";
-            break;
-            default:  ctx.fillRect(i*5, j*5,50,50); ctx.fillStyle = "black";
+
+    var fond=new Image();
+    fond.src='ressources/boardgame.png';
+
+    var teteSerp=new Image();
+    teteSerp.src='ressources/headsnake.png';
+
+    var corpsSerp=new Image();
+    corpsSerp.src='ressources/bodysnake.png';
+
+    var fruit=new Image();
+    fruit.src='ressources/food.png';
+
+    fond.onload = () => {
+      for (var i = 0; i < matrice.length; i++) {
+        for (var j = 0; j < matrice.length; j++) {
+          if(matrice[j][i]=="X"){
+            ctx.drawImage(fond,(i+10)*20,(j+10)*20,20,20);
+          }
         }
-        ctx.stroke();
       }
     }
+
+    teteSerp.onload = () => {
+      for (var i = 0; i < matrice.length; i++) {
+        for (var j = 0; j < matrice.length; j++) {
+          if(matrice[j][i]=="T"){
+            ctx.drawImage(teteSerp,(i+10)*20,(j+10)*20,20,20);
+          }
+        }
+      }
+    }
+
+    corpsSerp.onload = () => {
+      for (var i = 0; i < matrice.length; i++) {
+        for (var j = 0; j < matrice.length; j++) {
+          if(matrice[j][i]=="S"){
+            ctx.drawImage(corpsSerp,(i+10)*20,(j+10)*20,20,20);
+          }
+        }
+      }
+    }
+
+    fruit.onload = () => {
+      for (var i = 0; i < matrice.length; i++) {
+        for (var j = 0; j < matrice.length; j++) {
+          if(matrice[j][i]=="F"){
+            ctx.drawImage(fruit,(i+10)*20,(j+10)*20,20,20);
+          }
+        }
+      }
+    }
+
+
 
   }
 

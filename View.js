@@ -10,26 +10,29 @@ class View {
  */
   afficherLeJeu(matrice) {
     var jeu = document.getElementById("jeu");
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.restore();
+    ctx.beginPath();
 
-    console.log(matrice);
     for (var i = 0; i < matrice.length; i++) {
       for (var j = 0; j < matrice.length; j++) {
-        if(j==0) jeu.appendChild(document.createElement('br'));
-        var image = new Image(30,30);
-        switch (matrice[i][j]) {
-            case "X": image.src = "ressources/boardgame.png";
+        if(i==0) jeu.appendChild(document.createElement('br'));
+        switch (matrice[j][i]) {
+            case "X": ctx.fillRect(i*5,j*5,50,50); ctx.fillStyle = "green";
             break;
-            case "S":  image.src = "ressources/bodysnake.png";
+            case "S":  ctx.fillRect(i*5,j*5,50,50); ctx.fillStyle = "yellow";
             break;
-            case "T": image.src = "ressources/headsnake.png";
+            case "T":  ctx.fillRect(i*5, j*5,50,50); ctx.fillStyle = "yellow";
             break;
-            case "F":  image.src = "ressources/food.png";
+            case "F":  ctx.fillRect(i*5, j*5,50,50); ctx.fillStyle = "red";
             break;
-            default:  image.src = "ressources/boardgame.png";
+            default:  ctx.fillRect(i*5, j*5,50,50); ctx.fillStyle = "black";
         }
-        jeu.appendChild(image);
-
+        ctx.stroke();
       }
     }
+
   }
+
 }

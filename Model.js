@@ -52,6 +52,35 @@ class Model {
     this.fruit = nouveauFruit //le fruit a été placé sur une case qui n'est pas sur le serpent
   }
 
+  /**
+   * Permet de generer la matrice qui servira à l'affichage
+   * S = corps serpent
+   * T = tete serpent
+   * F = fruit
+   * X = rien
+   */
+  genererMatrice() {
+    var matrice = [];
+    for (var i = 0; i < this.grille.size; i++) {
+      matrice[i] = [];
+      for (var j = 0; j < this.grille.size; j++) {
+        var c = new Case(i, j); //création de la case étudiée
+        matrice[i][j] = 'X'; // valeur par défaut
+        serpent.positions.forEach(element => {
+          if (element.estEquivalent(c)) { //test si la case fait parti du serpent
+            matrice[i][j] = 'S';
+            if (c.estEquivalent(this.fruit)) {// test si la case est la tête du serpent
+              matrice[i][j] = 'F';
+            }
+          }
+        });
+        if (c.estEquivalent(this.serpent.getTete())) { //test si la case est le fruit
+          matrice[i][j] = 'T';
+        }
+      }
+    }
+    return matrice;
+  }
 
   /**
    * Generer un nombre entier aléatoire

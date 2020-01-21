@@ -1,4 +1,5 @@
 class Serpent {
+
     constructor() {
         this.size = 3;
         this.direction = "est";
@@ -115,5 +116,13 @@ class Serpent {
             }
         }
         return count > 0; //la case a été trouvée
+    }
+
+    /**
+     * Permet de verifier si une case est la tete du serpent
+     * @param {*} c 
+     */
+    estLaTete(c) {
+        return c.estEquivalent(this.getTete());
     }
 }

@@ -82,7 +82,7 @@ class Serpent {
         let count = 0
         for (let i = 0; i < this.positions.length; i++) { //recherche de la tête dans le serpent
             const element = array[i];
-            if (element == tete) {
+            if (element.superpose(tete)) {
                 count++;
             }
         }
@@ -111,7 +111,7 @@ class Serpent {
         let count = 0
         for (let i = 0; i < this.positions.length; i++) { //recherche de la case dans le serpent
             const element = array[i];
-            if (element.posX == c.posX && element.posY == c.posY) {
+            if (element.superpose(c)) {
                 count++;
             }
         }

@@ -1,54 +1,35 @@
 class View {
   constructor() {
+
   }
 
 /**
- * Affihche le jeu pour l'utilisateur 
- * TODO : séparer la génération de la matrice 
+ * Affihche le jeu pour l'utilisateur
+ * TODO : séparer la génération de la matrice
  * @param {*} matrice
  */
-  afficherLeJeu(grille, serpent, fruit) {
-    var matrix = [];
-    for (var i = 0; i < grille.size; i++) {
-      matrix[i] = [];
-      for (var j = 0; j < grille.size; j++) {
-        var c = new Case(i, j);
-        serpent.positions.forEach(element => {
-          if (element.superpose(c)) {
-            console.log("element")
-          }
-          else {
-            c = new Case(i, j);
-          }
-        });
-        if (i == 7 && j == 12) {
-          var c = new Case(i, j);
+  afficherLeJeu(matrice) {
+    var jeu = document.getElementById("jeu");
+
+    console.log(matrice);
+    for (var i = 0; i < matrice.length; i++) {
+      for (var j = 0; j < matrice.length; j++) {
+        if(j==0) jeu.appendChild(document.createElement('br'));
+        var image = new Image(30,30);
+        switch (matrice[i][j]) {
+            case "X": image.src = "ressources/boardgame.png";
+            break;
+            case "S":  image.src = "ressources/bodysnake.png";
+            break;
+            case "T": image.src = "ressources/headsnake.png";
+            break;
+            case "F":  image.src = "ressources/food.png";
+            break;
+            default:  image.src = "ressources/boardgame.png";
         }
+        jeu.appendChild(image);
 
-        //TODO ci- apres : A refaire 
-        var image = new Image();
-        matrix[i][j] = image;
-        if (i == 0 || j == 0 || i == grille.size - 1 || j == grille.size - 1) image.src = "ressources/wall.png";
-        if (!c.serpent && !c.fruit && i != 0 && j != 0 && i != grille.size - 1 && j != grille.size - 1) image.src = "ressources/boardgame.png";
-        if (c.serpent) {
-          console.log(serpent.estLaTete(c))
-          if (serpent.estLaTete(c)) {
-            image.src = "ressources/headsnake.png";
-          } else {
-            image.src = "ressources/bodysnake.png";
-          }
-        }
-
-        if (c.fruit) image.src = "ressources/food.png";
-
-        image.width = 30;
-        image.height = 30;
-        if (j == 0) { document.body.appendChild(document.createElement('br')); }
-
-        document.body.appendChild(image);
       }
     }
-    console.log(matrix);
-
   }
 }

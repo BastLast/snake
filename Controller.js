@@ -8,13 +8,17 @@ class Controller {
    * Permet d'afficher le jeu pour l'utilisateur
    */
   afficherLeJeu(){
-    this.view.afficherLeJeu(this.model.grille,this.model.serpent,this.model.fruit);
+    this.view.afficherLeJeu(this.model.genererMatrice());
   }
 
    /**
    * Permet d'afficher l'écran de fin de jeu
    */
   afficherEcranFin(){
-    
+
   }
 }
+
+const app = new Controller(new Model(), new View());
+
+app.afficherLeJeu();

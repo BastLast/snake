@@ -11,7 +11,7 @@ class Model {
   deplacerSerpent() {
     this.serpent.avancer();
     if (this.serpentSorsDeLaGrille() || this.serpent.seMordQueue()) {
-      // Le jeu est terminé, le joueur a perdu 
+      // Le jeu est terminé, le joueur a perdu
     } else {
       if (!this.serpentMangeFruit()) {
         // Si le serpent ne mange pas de fruit il faut faire avancer la queue du serpent
@@ -66,16 +66,16 @@ class Model {
       for (var j = 0; j < this.grille.size; j++) {
         var c = new Case(i, j); //création de la case étudiée
         matrice[i][j] = 'X'; // valeur par défaut
-        serpent.positions.forEach(element => {
+        this.serpent.positions.forEach(element => {
           if (element.superpose(c)) { //test si la case fait parti du serpent
             matrice[i][j] = 'S';
-            if (c.superpose(this.fruit)) {// test si la case est la tête du serpent
-              matrice[i][j] = 'F';
+            if (c.superpose(this.serpent.getTete())) { //test si la case est la tête du serpent
+              matrice[i][j] = 'T';
             }
           }
         });
-        if (c.superpose(this.serpent.getTete())) { //test si la case est le fruit
-          matrice[i][j] = 'T';
+        if (c.superpose(this.fruit)) {// test si la case est un fruit
+          matrice[i][j] = 'F';
         }
       }
     }
@@ -84,8 +84,8 @@ class Model {
 
   /**
    * Generer un nombre entier aléatoire
-   * @param {*} min 
-   * @param {*} max 
+   * @param {*} min
+   * @param {*} max
    */
   genererNombreAleatoire(min, max) {
     return Math.round(Math.random() * (max - min) + min);

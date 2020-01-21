@@ -19,6 +19,9 @@ class View {
     var fond=new Image();
     fond.src='ressources/boardgame.png';
 
+    var mur=new Image();
+    mur.src='ressources/wall.png';
+
     var teteSerp=new Image();
     teteSerp.src='ressources/headsnake.png';
 
@@ -33,6 +36,16 @@ class View {
         for (var j = 0; j < matrice.length; j++) {
           if(matrice[j][i]=="X"){
             ctx.drawImage(fond,(i+10)*20,(j+10)*20,20,20);
+          }
+        }
+      }
+    }
+
+    mur.onload = () => {
+      for (var i = 0; i < matrice.length; i++) {
+        for (var j = 0; j < matrice.length; j++) {
+          if(matrice[j][i]=="W"){
+            ctx.drawImage(mur,(i+10)*20,(j+10)*20,20,20);
           }
         }
       }

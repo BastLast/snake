@@ -4,9 +4,9 @@ class Serpent {
         this.size = 3;
         this.direction = "est";
         this.positions = new Array();
-        this.positions.push(new Case(7, 1, false, true));
-        this.positions.push(new Case(7, 2, false, true));
-        this.positions.push(new Case(7, 3, false, true));
+        this.positions.push(new Case(8, 2, false, true));
+        this.positions.push(new Case(8, 3, false, true));
+        this.positions.push(new Case(8, 4, false, true));
     }
 
     /**
@@ -45,7 +45,7 @@ class Serpent {
 
     /**
      * Permet de changer la direction dans laquelle le serpent va
-     * @param {*} nouvelleDirection 
+     * @param {*} nouvelleDirection
      */
     changerDirection(nouvelleDirection) {
         switch (nouvelleDirection) {
@@ -105,7 +105,7 @@ class Serpent {
 
     /**
      * Permet de verifier qu'une case donnée en parametre fais parti du serpent
-     * @param {*} c 
+     * @param {*} c
      */
     faisPartiDuSerpent(c) {
         let count = 0
@@ -120,7 +120,7 @@ class Serpent {
 
     /**
      * Permet de verifier si une case est la tete du serpent
-     * @param {*} c 
+     * @param {*} c
      */
     estLaTete(c) {
         return c.superpose(this.getTete());

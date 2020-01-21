@@ -67,14 +67,14 @@ class Model {
         var c = new Case(i, j); //création de la case étudiée
         matrice[i][j] = 'X'; // valeur par défaut
         serpent.positions.forEach(element => {
-          if (element.estEquivalent(c)) { //test si la case fait parti du serpent
+          if (element.superpose(c)) { //test si la case fait parti du serpent
             matrice[i][j] = 'S';
-            if (c.estEquivalent(this.fruit)) {// test si la case est la tête du serpent
+            if (c.superpose(this.fruit)) {// test si la case est la tête du serpent
               matrice[i][j] = 'F';
             }
           }
         });
-        if (c.estEquivalent(this.serpent.getTete())) { //test si la case est le fruit
+        if (c.superpose(this.serpent.getTete())) { //test si la case est le fruit
           matrice[i][j] = 'T';
         }
       }

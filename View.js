@@ -14,7 +14,7 @@ class View {
       for (var j = 0; j < grille.size; j++) {
         var c = new Case(i, j);
         serpent.positions.forEach(element => {
-          if (element.estEquivalent(c)) {
+          if (element.superpose(c)) {
             console.log("element")
           }
           else {

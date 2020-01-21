@@ -123,6 +123,6 @@ class Serpent {
      * @param {*} c 
      */
     estLaTete(c) {
-        return c.estEquivalent(this.getTete());
+        return c.superpose(this.getTete());
     }
 }

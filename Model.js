@@ -11,7 +11,7 @@ class Model {
   deplacerSerpent() {
     this.serpent.avancer();
     if (this.serpentSorsDeLaGrille() || this.serpent.seMordQueue()) {
-      // Le jeu est terminé, le joueur a perdu
+      return false;
     } else {
       if (!this.serpentMangeFruit()) {
         // Si le serpent ne mange pas de fruit il faut faire avancer la queue du serpent
@@ -21,6 +21,7 @@ class Model {
         this.serpent.manger();
         this.genererFruit();
       }
+      return true;
     }
   }
 
@@ -28,7 +29,7 @@ class Model {
    *  Verifie que le serpent n'est pas sorti de la grille
    */
   serpentSorsDeLaGrille() {
-    return this.serpent.getTete().posX == this.grille.size || this.serpent.getTete().posY == this.grille.size || this.serpent.getTete().posY < 0 || this.serpent.getTete().posX < 0;
+    return this.serpent.getTete().posX >= this.grille.size || this.serpent.getTete().posY >= this.grille.size || this.serpent.getTete().posY < 0 || this.serpent.getTete().posX < 0;
   }
 
   /**
@@ -49,7 +50,6 @@ class Model {
       nouveauFruit = new Case(nouveauPosX, nouveauPosY, true, false);
     }
     while (this.serpent.faisPartiDuSerpent(nouveauFruit));
-    console.log("aaaaaaaaaaaaaa");
     this.fruit = nouveauFruit //le fruit a été placé sur une case qui n'est pas sur le serpent
   }
 

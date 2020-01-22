@@ -1,12 +1,8 @@
-#jeu{
-  text-align:center;
-}
-
-body{
+#jeu {
+  text-align: center;
 }
 
 #canvas {
   text-align: center;
   background-color: black;
-
 }

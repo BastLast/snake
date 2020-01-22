@@ -21,7 +21,7 @@ class Serpent {
      */
     avancer() {
         let tete = this.getTete();
-        switch (direction) {
+        switch (this.direction) {
             case "est":
                 this.positions.push(
                     new Case(tete.posX, tete.posY + 1, false, true));
@@ -81,7 +81,7 @@ class Serpent {
         let tete = this.getTete();
         let count = 0
         for (let i = 0; i < this.positions.length; i++) { //recherche de la tête dans le serpent
-            const element = array[i];
+            const element = this.positions[i];
             if (element.superpose(tete)) {
                 count++;
             }
@@ -110,7 +110,7 @@ class Serpent {
     faisPartiDuSerpent(c) {
         let count = 0
         for (let i = 0; i < this.positions.length; i++) { //recherche de la case dans le serpent
-            const element = array[i];
+            const element = this.positions[i];
             if (element.superpose(c)) {
                 count++;
             }

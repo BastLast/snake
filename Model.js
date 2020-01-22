@@ -48,7 +48,8 @@ class Model {
       let nouveauPosY = this.genererNombreAleatoire(0, this.grille.size - 1);
       nouveauFruit = new Case(nouveauPosX, nouveauPosY, true, false);
     }
-    while (this.serpent.faisPartiDuSerpent(nouveauFruit))
+    while (this.serpent.faisPartiDuSerpent(nouveauFruit));
+    console.log("aaaaaaaaaaaaaa");
     this.fruit = nouveauFruit //le fruit a été placé sur une case qui n'est pas sur le serpent
   }
 

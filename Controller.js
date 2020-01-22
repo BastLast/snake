@@ -15,10 +15,15 @@ class Controller {
    * Permet d'afficher l'écran de fin de jeu
    */
   afficherEcranFin(){
-
+    
   }
 }
 
 const app = new Controller(new Model(), new View());
 
-app.afficherLeJeu();
+setInterval(() => {
+  app.model.deplacerSerpent();
+  app.afficherLeJeu();
+}, 1000);
+
+

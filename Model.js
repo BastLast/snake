@@ -2,7 +2,7 @@ class Model {
   constructor() {
     this.grille = new Grille();
     this.serpent = new Serpent();
-    this.fruit = new Case(8, 13, true, false);
+    this.fruit = new Case(8, 13);
   }
 
   /**
@@ -47,7 +47,7 @@ class Model {
     do {
       let nouveauPosX = this.genererNombreAleatoire(0, this.grille.size - 1);
       let nouveauPosY = this.genererNombreAleatoire(0, this.grille.size - 1);
-      nouveauFruit = new Case(nouveauPosX, nouveauPosY, true, false);
+      nouveauFruit = new Case(nouveauPosX, nouveauPosY);
     }
     while (this.serpent.faisPartiDuSerpent(nouveauFruit));
     this.fruit = nouveauFruit //le fruit a été placé sur une case qui n'est pas sur le serpent

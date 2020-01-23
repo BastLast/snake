@@ -11,6 +11,14 @@ class Controller {
     this.view.afficherLeJeu(this.model.genererMatrice());
   }
 
+  
+  /**
+   * Permet d'afficher le jeu pour l'utilisateur
+   */
+  actualiserLeJeu() {
+    this.view.actualiserLeJeu(this.model.genererMatrice());
+  }
+
   /**
   * Permet d'afficher l'écran de fin de jeu
   */
@@ -21,12 +29,14 @@ class Controller {
 
 const app = new Controller(new Model(), new View());
 
+app.afficherLeJeu();
+
 /**
  * Permet d'executer le jeu
  */
 function jeu() {
   if (app.model.deplacerSerpent()) {
-    app.afficherLeJeu();
+    app.actualiserLeJeu();
   } else {
     clearInterval(interval); //arret du jeu
     this.alert(" Vous avez perdu ! \n\n Score : " + app.model.serpent.size);
@@ -58,7 +68,7 @@ document.addEventListener('keydown', (event) => {
   app.model.serpent.changerDirection(nouvelleDirection)
 }, false);
 
-let interval = setInterval(jeu, 100);
+let interval = setInterval(jeu, 300);
 
 
 

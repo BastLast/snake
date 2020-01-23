@@ -1,6 +1,6 @@
 class Grille {
     constructor() {
-        this.size = 18;
+        this.size = 19;
      }
 
 

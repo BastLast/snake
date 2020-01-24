@@ -32,9 +32,7 @@ class View {
     fond.onload = () => {
       for (var i = 0; i < matrice.length; i++) {
         for (var j = 0; j < matrice.length; j++) {
-          if (matrice[j][i] == "X") {
             ctx.drawImage(fond, (i +3) * 30, (j +3) * 30, 30, 30);
-          }
         }
       }
     }

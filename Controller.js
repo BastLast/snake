@@ -69,12 +69,9 @@ document.addEventListener('keydown', (event) => {
   app.model.serpent.changerDirection(nouvelleDirection)
 }, false);
 
-<<<<<<< HEAD
-let interval = setInterval(jeu, 300);
-=======
 let interval = setInterval(jeu, 150);
 
 
 
 
->>>>>>> 9825f7f4bf08b351adeb57d19aefb1bc9b62748d
+

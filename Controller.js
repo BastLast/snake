@@ -27,7 +27,7 @@ class Controller {
   }
 }
 
-const app = new Controller(new Model(), new View());
+let app = new Controller(new Model(), new View());
 
 app.afficherLeJeu();
 
@@ -40,7 +40,7 @@ function jeu() {
   } else {
     clearInterval(interval); //arret du jeu
     this.alert(" Vous avez perdu ! \n\n Score : " + app.model.serpent.size);
-    
+
   }
 };
 
@@ -71,7 +71,12 @@ document.addEventListener('keydown', (event) => {
 
 let interval = setInterval(jeu, 150);
 
-
+let restartButton = document.getElementById('restartButton');
+restartButton.onclick = function () {
+  app = new Controller(new Model(), new View());
+  app.afficherLeJeu();
+  interval = setInterval(jeu, 150);
+};
 
 
 

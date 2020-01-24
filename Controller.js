@@ -72,6 +72,10 @@ document.addEventListener('keydown', (event) => {
 let interval = setInterval(jeu, 150);
 
 let restartButton = document.getElementById('restartButton');
+
+/**
+ * Permet de réinitialiser le jeu au clic sur un bouton
+ */
 restartButton.onclick = function () {
   app = new Controller(new Model(), new View());
   app.afficherLeJeu();

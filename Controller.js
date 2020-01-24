@@ -40,7 +40,7 @@ function jeu() {
   } else {
     clearInterval(interval); //arret du jeu
     this.alert(" Vous avez perdu ! \n\n Score : " + app.model.serpent.size);
-
+    app.model.stockScore(app.model.serpent.size);
   }
 };
 
@@ -70,7 +70,6 @@ document.addEventListener('keydown', (event) => {
 }, false);
 
 let interval = setInterval(jeu, 150);
-
 let restartButton = document.getElementById('restartButton');
 
 /**
@@ -81,6 +80,7 @@ restartButton.onclick = function () {
   app.afficherLeJeu();
   interval = setInterval(jeu, 150);
 };
+
 
 
 

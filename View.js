@@ -17,9 +17,6 @@ class View {
     var fond = new Image();
     fond.src = 'ressources/boardgame.png';
 
-    var mur = new Image();
-    mur.src = 'ressources/wall.png';
-
     var teteSerp = new Image();
     teteSerp.src = 'ressources/headsnake.png';
 
@@ -33,16 +30,6 @@ class View {
       for (var i = 0; i < matrice.length; i++) {
         for (var j = 0; j < matrice.length; j++) {
             ctx.drawImage(fond, (i +3) * 30, (j +3) * 30, 30, 30);
-        }
-      }
-    }
-
-    mur.onload = () => {
-      for (var i = 0; i < matrice.length; i++) {
-        for (var j = 0; j < matrice.length; j++) {
-          if (matrice[j][i] == "W") {
-            ctx.drawImage(mur, (i + 3) * 30, (j + 3) * 30, 30, 30);
-          }
         }
       }
     }
@@ -91,9 +78,6 @@ class View {
     var fond = new Image();
     fond.src = 'ressources/boardgame.png';
 
-    var mur = new Image();
-    mur.src = 'ressources/wall.png';
-
     var teteSerp = new Image();
     teteSerp.src = 'ressources/headsnake.png';
 
@@ -108,14 +92,6 @@ class View {
       for (var j = 0; j < matrice.length; j++) {
         if (matrice[j][i] == "X") {
           ctx.drawImage(fond, (i + 3) * 30, (j + 3) * 30, 30, 30);
-        }
-      }
-    }
-
-    for (var i = 0; i < matrice.length; i++) {
-      for (var j = 0; j < matrice.length; j++) {
-        if (matrice[j][i] == "W") {
-          ctx.drawImage(mur, (i + 3) * 30, (j + 3) * 30, 30, 30);
         }
       }
     }

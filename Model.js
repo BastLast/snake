@@ -67,7 +67,6 @@ class Model {
       for (var j = 0; j < this.grille.size; j++) {
         var c = new Case(i, j); //création de la case étudiée
         matrice[i][j] = 'X'; // valeur par défaut
-        if(i==0 || j==0 || i==this.grille.size-1 || j==this.grille.size-1) matrice[i][j] = 'W';
         this.serpent.positions.forEach(element => {
           if (element.superpose(c)) { //test si la case fait parti du serpent
             matrice[i][j] = 'S';

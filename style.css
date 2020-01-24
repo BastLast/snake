@@ -39,9 +39,10 @@
 
 
 body {
-  background-color: #95CC81;
+  background-image: url("ressources/wall.png");
+  background-size: 30px;
+  overflow: hidden;
 }
 
 #canvas {
-  background-color: #95CC81;
 }

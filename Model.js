@@ -53,6 +53,13 @@ class Model {
     this.fruit = nouveauFruit //le fruit a été placé sur une case qui n'est pas sur le serpent
   }
 
+  stockScore(score) {
+    if(document.cookie == "") document.cookie = score;
+    if(score > document.cookie) document.cookie = score;
+    console.log(document.cookie);
+  }
+
+
   /**
    * Permet de generer la matrice qui servira à l'affichage
    * S = corps serpent

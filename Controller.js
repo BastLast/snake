@@ -11,7 +11,7 @@ class Controller {
     this.view.afficherLeJeu(this.model.genererMatrice());
   }
 
-  
+
   /**
    * Permet d'afficher le jeu pour l'utilisateur
    */
@@ -40,6 +40,7 @@ function jeu() {
   } else {
     clearInterval(interval); //arret du jeu
     this.alert(" Vous avez perdu ! \n\n Score : " + app.model.serpent.size);
+    
   }
 };
 
@@ -69,7 +70,3 @@ document.addEventListener('keydown', (event) => {
 }, false);
 
 let interval = setInterval(jeu, 300);
-
-
-
-

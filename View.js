@@ -14,7 +14,6 @@ class View {
     canvas.length = document.getElementById("jeu").clientHeight;
     var ctx = canvas.getContext("2d");
 
-
     var fond = new Image();
     fond.src = 'ressources/boardgame.png';
 
@@ -34,7 +33,7 @@ class View {
       for (var i = 0; i < matrice.length; i++) {
         for (var j = 0; j < matrice.length; j++) {
           if (matrice[j][i] == "X") {
-            ctx.drawImage(fond, (i + 10) * 20, (j + 10) * 20, 20, 20);
+            ctx.drawImage(fond, (i +3) * 30, (j +3) * 30, 30, 30);
           }
         }
       }
@@ -44,7 +43,7 @@ class View {
       for (var i = 0; i < matrice.length; i++) {
         for (var j = 0; j < matrice.length; j++) {
           if (matrice[j][i] == "W") {
-            ctx.drawImage(mur, (i + 10) * 20, (j + 10) * 20, 20, 20);
+            ctx.drawImage(mur, (i + 3) * 30, (j + 3) * 30, 30, 30);
           }
         }
       }
@@ -54,7 +53,7 @@ class View {
       for (var i = 0; i < matrice.length; i++) {
         for (var j = 0; j < matrice.length; j++) {
           if (matrice[j][i] == "T") {
-            ctx.drawImage(teteSerp, (i + 10) * 20, (j + 10) * 20, 20, 20);
+            ctx.drawImage(teteSerp, (i + 3) * 30, (j + 3) * 30, 30, 30);
           }
         }
       }
@@ -64,7 +63,7 @@ class View {
       for (var i = 0; i < matrice.length; i++) {
         for (var j = 0; j < matrice.length; j++) {
           if (matrice[j][i] == "S") {
-            ctx.drawImage(corpsSerp, (i + 10) * 20, (j + 10) * 20, 20, 20);
+            ctx.drawImage(corpsSerp, (i + 3) * 30, (j + 3) * 30, 30, 30);
           }
         }
       }
@@ -74,7 +73,7 @@ class View {
       for (var i = 0; i < matrice.length; i++) {
         for (var j = 0; j < matrice.length; j++) {
           if (matrice[j][i] == "F") {
-            ctx.drawImage(fruit, (i + 10) * 20, (j + 10) * 20, 20, 20);
+            ctx.drawImage(fruit, (i + 3) * 30, (j + 3) * 30, 30, 30);
           }
         }
       }
@@ -110,7 +109,7 @@ class View {
     for (var i = 0; i < matrice.length; i++) {
       for (var j = 0; j < matrice.length; j++) {
         if (matrice[j][i] == "X") {
-          ctx.drawImage(fond, (i + 10) * 20, (j + 10) * 20, 20, 20);
+          ctx.drawImage(fond, (i + 3) * 30, (j + 3) * 30, 30, 30);
         }
       }
     }
@@ -118,7 +117,7 @@ class View {
     for (var i = 0; i < matrice.length; i++) {
       for (var j = 0; j < matrice.length; j++) {
         if (matrice[j][i] == "W") {
-          ctx.drawImage(mur, (i + 10) * 20, (j + 10) * 20, 20, 20);
+          ctx.drawImage(mur, (i + 3) * 30, (j + 3) * 30, 30, 30);
         }
       }
     }
@@ -126,7 +125,7 @@ class View {
     for (var i = 0; i < matrice.length; i++) {
       for (var j = 0; j < matrice.length; j++) {
         if (matrice[j][i] == "T") {
-          ctx.drawImage(teteSerp, (i + 10) * 20, (j + 10) * 20, 20, 20);
+          ctx.drawImage(teteSerp, (i + 3) * 30, (j + 3) * 30, 30, 30);
         }
       }
     }
@@ -134,7 +133,7 @@ class View {
     for (var i = 0; i < matrice.length; i++) {
       for (var j = 0; j < matrice.length; j++) {
         if (matrice[j][i] == "S") {
-          ctx.drawImage(corpsSerp, (i + 10) * 20, (j + 10) * 20, 20, 20);
+          ctx.drawImage(corpsSerp, (i + 3) * 30, (j + 3) * 30, 30, 30);
         }
       }
     }
@@ -142,7 +141,7 @@ class View {
     for (var i = 0; i < matrice.length; i++) {
       for (var j = 0; j < matrice.length; j++) {
         if (matrice[j][i] == "F") {
-          ctx.drawImage(fruit, (i + 10) * 20, (j + 10) * 20, 20, 20);
+          ctx.drawImage(fruit, (i + 3) * 30, (j + 3) * 30, 30, 30);
         }
       }
     }

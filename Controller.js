@@ -80,5 +80,6 @@ let restartButton = document.getElementById('restartButton');
 restartButton.onclick = function () {
   app = new Controller(new Model(), new View());
   app.afficherLeJeu();
+  clearInterval(interval);
   interval = setInterval(jeu, 150);
 };

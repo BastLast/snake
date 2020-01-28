@@ -9,20 +9,17 @@ class Model {
    * Effectue un tour du jeu, déplace le serpent et vérifie que le joueur n'a pas perdu ou mangé de fruit
    */
   deplacerSerpent() {
-    this.serpent.avancer();
-    if (this.serpentSorsDeLaGrille() || this.serpent.seMordQueue()) {
-      return false;
-    } else {
-      if (!this.serpentMangeFruit()) {
-        // Si le serpent ne mange pas de fruit il faut faire avancer la queue du serpent
-        this.serpent.avancerQueue();
-      } else {
-        // Le serpent mange le fruit.
-        this.serpent.manger();
-        this.genererFruit();
-      }
-      return true;
+    if (!this.serpentMangeFruit()) {
+      // Si le serpent ne mange pas de fruit il faut faire avancer la queue du serpent
+      this.serpent.avancerQueue();
     }
+    this.serpent.avancer();
+    if (this.serpentMangeFruit()) {
+      // Le serpent mange le fruit.
+      this.serpent.manger();
+      this.genererFruit();
+    }
+    return !(this.serpentSorsDeLaGrille() || this.serpent.seMordQueue());
   }
 
   /**
@@ -58,8 +55,8 @@ class Model {
    * @param {*} score 
    */
   sauvegarderRecord(score) {
-    if(localStorage.getItem("scoreMax") == "") localStorage.setItem("scoreMax", score);
-    if(score > localStorage.getItem("scoreMax")) localStorage.setItem("scoreMax", score);
+    if (localStorage.getItem("scoreMax") == "") localStorage.setItem("scoreMax", score);
+    if (score > localStorage.getItem("scoreMax")) localStorage.setItem("scoreMax", score);
   }
 
 

@@ -119,7 +119,13 @@ class View {
         }
       }
     }
+  }
 
+  /**
+   * 
+   */
+  actualiserLeScore(score){
+document.getElementById('affScore').innerHTML = "Score actuel : " + score
   }
 
 }

@@ -17,12 +17,14 @@ class Controller {
    */
   actualiserLeJeu() {
     this.view.actualiserLeJeu(this.model.genererMatrice());
+    this.view.actualiserLeScore(this.model.serpent.size)
   }
 
   /**
   * Permet d'afficher l'écran de fin de jeu
   */
   afficherEcranFin() {
+
 
   }
 }
@@ -39,8 +41,6 @@ function jeu() {
     app.actualiserLeJeu();
   } else {
     clearInterval(interval); //arret du jeu
-    this.alert(" Vous avez perdu ! \n\n Score : " + app.model.serpent.size);
-    app.model.stockScore(app.model.serpent.size);
   }
 };
 

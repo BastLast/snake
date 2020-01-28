@@ -4,38 +4,66 @@
 }
 
 #jeu {
-  display: inline-block;
+  display: none;
+}
+
+#rightPart {
+  display: none;
+}
+
+@media (min-width: 1420px) {
+  .error {
+    display: none;
+  }
+  #jeu {
+    display: inline-block;
+  }
+  #rightPart {
+    display: inline-block;
+  }
 }
 
 #rightPart {
   text-align: center;
-  width: 20%;
   width: 600px;
   height: 600px;
-  display: inline-block;
   background: #000;
   vertical-align: top;
   margin-top: 90px;
   margin-bottom: 150px;
 }
 
+.error {
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
+  padding-top: 30%;
+  padding-bottom: 30%;
+  background: #000;
+  vertical-align: top;
+  margin-top: 90px;
+  margin-bottom: 10%;
+}
+
 #body {
   display: inline-block;
 }
 
-#affScore {
-  margin-left: 50px;
-  float: left;
-}
-
-#titre {
+.titre {
   font-size: 50px;
-  text-align: center;
+  color: white;
+  font-family: "8bit";
 }
 
 .texte {
+  text-align: left;
+  margin: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  float: left;
   color: white;
   font-family: "8bit";
+  width: 500px;
 }
 
 .btn {
@@ -76,42 +104,21 @@
   ;
 }
 
-/* Orange */
-
-.warning {
-  border-color: #ff9800;
-  color: orange;
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
 }
 
-.warning:hover {
-  background: #ff9800;
-  color: black;
-  ;
-}
-
-/* Red */
-
-.danger {
-  border-color: #f44336;
-  color: red;
-}
-
-.danger:hover {
-  background: #f44336;
-  color: black;
-  ;
-}
-
-/* Gray */
-
-.default {
-  border-color: #e7e7e7;
-  color: black;
-}
-
-.default:hover {
-  background: black;
-  ;
+.alert {
+  padding: 15px;
+  margin: 20px;
+  border: 1px solid transparent;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-radius: 4px;
 }
 
 body {

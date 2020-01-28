@@ -10,8 +10,6 @@ class View {
   afficherLeJeu(matrice) {
     //var jeu = document.getElementById("jeu");
     var canvas = document.getElementById("canvas");
-    canvas.width = document.getElementById("jeu").clientWidth;
-    canvas.length = document.getElementById("jeu").clientHeight;
     var ctx = canvas.getContext("2d");
 
     var fond = new Image();

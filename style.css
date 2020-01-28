@@ -1,27 +1,49 @@
+@font-face {
+  font-family: "8bit";
+  src: url("ressources/8-BIT WONDER.TTF");
+}
+
 #jeu {
   display: inline-block;
 }
 
 #rightPart {
+  text-align: center;
   width: 20%;
   width: 600px;
   height: 600px;
   display: inline-block;
   background: #000;
   vertical-align: top;
-  margin-top: 100px;
+  margin-top: 90px;
   margin-bottom: 150px;
 }
 
-#body{
+#body {
   display: inline-block;
 }
 
+#affScore {
+  margin-left: 50px;
+  float: left;
+}
+
+#titre {
+  font-size: 50px;
+  text-align: center;
+}
+
+.texte {
+  color: white;
+  font-family: "8bit";
+}
+
 .btn {
-  margin : 50px;
+  margin: 50px;
   width: 500px;
   border: 2px solid white;
-  background-color: black;;
+  background-color: black;
+  ;
   color: white;
   padding: 14px 28px;
   font-size: 16px;
@@ -37,10 +59,12 @@
 
 .success:hover {
   background-color: #4CAF50;
-  color: white;;
+  color: white;
+  ;
 }
 
 /* Blue */
+
 .info {
   border-color: #2196F3;
   color: dodgerblue;
@@ -48,7 +72,8 @@
 
 .info:hover {
   background: #2196F3;
-  color: black;;
+  color: black;
+  ;
 }
 
 /* Orange */
@@ -60,7 +85,8 @@
 
 .warning:hover {
   background: #ff9800;
-  color: black;;
+  color: black;
+  ;
 }
 
 /* Red */
@@ -72,7 +98,8 @@
 
 .danger:hover {
   background: #f44336;
-  color: black;;
+  color: black;
+  ;
 }
 
 /* Gray */
@@ -83,7 +110,8 @@
 }
 
 .default:hover {
-  background: black;;
+  background: black;
+  ;
 }
 
 body {

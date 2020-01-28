@@ -54,8 +54,8 @@ class Model {
   }
 
   sauvegarderRecord(score) {
-    if(document.cookie == "") document.cookie = score;
-    if(score > document.cookie) document.cookie = score;
+    if(localStorage.getItem("scoreMax") == "") localStorage.setItem("scoreMax", score);
+    if(score > localStorage.getItem("scoreMax")) localStorage.setItem("scoreMax", score);
   }
 
 

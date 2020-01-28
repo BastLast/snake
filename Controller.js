@@ -19,7 +19,7 @@ class Controller {
     this.view.actualiserLeJeu(this.model.genererMatrice());
     this.view.actualiserLeScore(this.model.serpent.size);
     app.model.sauvegarderRecord(app.model.serpent.size);
-    this.view.actualiserLeScoreMax(document.cookie);
+    this.view.actualiserLeScoreMax(localStorage.getItem("scoreMax"));
   }
 
   /**

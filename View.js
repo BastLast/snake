@@ -122,10 +122,14 @@ class View {
   }
 
   /**
-   * 
+   *
    */
   actualiserLeScore(score){
-document.getElementById('affScore').innerHTML = "Score actuel : " + score
+    document.getElementById('affScore').innerHTML = "Score actuel : " + score
+  }
+
+  actualiserLeScoreMax(score){
+    document.getElementById('affScoreMax').innerHTML = "Score max : " + score;
   }
 
 }

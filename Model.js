@@ -56,7 +56,6 @@ class Model {
   sauvegarderRecord(score) {
     if(document.cookie == "") document.cookie = score;
     if(score > document.cookie) document.cookie = score;
-    console.log(document.cookie);
   }
 
 

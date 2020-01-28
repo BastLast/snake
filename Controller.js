@@ -17,7 +17,9 @@ class Controller {
    */
   actualiserLeJeu() {
     this.view.actualiserLeJeu(this.model.genererMatrice());
-    this.view.actualiserLeScore(this.model.serpent.size)
+    this.view.actualiserLeScore(this.model.serpent.size);
+    app.model.sauvegarderRecord(app.model.serpent.size);
+    this.view.actualiserLeScoreMax(document.cookie);
   }
 
   /**
@@ -80,7 +82,3 @@ restartButton.onclick = function () {
   app.afficherLeJeu();
   interval = setInterval(jeu, 150);
 };
-
-
-
-

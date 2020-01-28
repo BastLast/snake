@@ -119,6 +119,26 @@ class View {
     }
   }
 
+  afficherEcranFin(matrice) {
+    //var jeu = document.getElementById("jeu");
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    var fond = new Image();
+    fond.src = 'ressources/boardgame.png';
+
+    for (var i = 0; i < matrice.length; i++) {
+      for (var j = 0; j < matrice.length; j++) {
+
+          ctx.drawImage(fond, (i + 3) * 30, (j + 3) * 30, 30, 30);
+
+      }
+    }
+    ctx.fillStyle = "white";
+    ctx.fillText("Game Over", 200, 200);
+
+  }
+
   /**
    * Affiche le score sur la partie droite de l'écran
    * @param {*} score

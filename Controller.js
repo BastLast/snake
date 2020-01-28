@@ -26,8 +26,7 @@ class Controller {
   * Permet d'afficher l'écran de fin de jeu
   */
   afficherEcranFin() {
-
-
+    this.view.afficherEcranFin(this.model.genererMatrice());
   }
 }
 
@@ -43,6 +42,7 @@ function jeu() {
     app.actualiserLeJeu();
   } else {
     clearInterval(interval); //arret du jeu
+    app.afficherEcranFin();
   }
 };
 

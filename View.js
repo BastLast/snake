@@ -7,7 +7,7 @@ class View {
    * Affihche le jeu pour l'utilisateur
    * @param {*} matrice
    */
-  afficherLeJeu(matrice) {
+  afficherLeJeu(matrice,couleur) {
     //var jeu = document.getElementById("jeu");
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
@@ -16,10 +16,10 @@ class View {
     fond.src = 'ressources/boardgame.png';
 
     var teteSerp = new Image();
-    teteSerp.src = 'ressources/headsnake.png';
+    teteSerp.src = 'ressources/headsnake-'+couleur+'.png';
 
     var corpsSerp = new Image();
-    corpsSerp.src = 'ressources/bodysnake.png';
+    corpsSerp.src = 'ressources/bodysnake-'+couleur+'.png';
 
     var fruit = new Image();
     fruit.src = 'ressources/food.png';
@@ -67,7 +67,7 @@ class View {
  * actualise l'affichage
  * @param {*} matrice
  */
-  actualiserLeJeu(matrice) {
+  actualiserLeJeu(matrice, couleur) {
     //var jeu = document.getElementById("jeu");
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
@@ -77,10 +77,10 @@ class View {
     fond.src = 'ressources/boardgame.png';
 
     var teteSerp = new Image();
-    teteSerp.src = 'ressources/headsnake.png';
+    teteSerp.src = 'ressources/headsnake-'+couleur+'.png';
 
     var corpsSerp = new Image();
-    corpsSerp.src = 'ressources/bodysnake.png';
+    corpsSerp.src = 'ressources/bodysnake-'+couleur+'.png';
 
     var fruit = new Image();
     fruit.src = 'ressources/food.png';
@@ -121,7 +121,7 @@ class View {
 
   /**
    * Affiche le score sur la partie droite de l'écran
-   * @param {*} score 
+   * @param {*} score
    */
   actualiserLeScore(score){
     document.getElementById('affScore').innerHTML = "Score actuel : " + score
@@ -130,7 +130,7 @@ class View {
 
   /**
    * Affiche le record sur la partie droite de l'écran
-   * @param {*} score 
+   * @param {*} score
    */
   actualiserLeScoreMax(score){
     document.getElementById('affScoreMax').innerHTML = "Score max : " + score;

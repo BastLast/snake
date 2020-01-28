@@ -53,6 +53,10 @@ class Model {
     this.fruit = nouveauFruit //le fruit a été placé sur une case qui n'est pas sur le serpent
   }
 
+  /**
+   * Permet d'enregistrer le record dans un fichier 
+   * @param {*} score 
+   */
   sauvegarderRecord(score) {
     if(localStorage.getItem("scoreMax") == "") localStorage.setItem("scoreMax", score);
     if(score > localStorage.getItem("scoreMax")) localStorage.setItem("scoreMax", score);

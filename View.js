@@ -122,12 +122,18 @@ class View {
   }
 
   /**
-   *
+   * Affiche le score sur la partie droite de l'écran
+   * @param {*} score 
    */
   actualiserLeScore(score){
     document.getElementById('affScore').innerHTML = "Score actuel : " + score
   }
 
+
+  /**
+   * Affiche le record sur la partie droite de l'écran
+   * @param {*} score 
+   */
   actualiserLeScoreMax(score){
     document.getElementById('affScoreMax').innerHTML = "Score max : " + score;
   }

@@ -135,6 +135,7 @@ class View {
       }
     }
     ctx.fillStyle = "white";
+    ctx.font = "40px '8bit'";
     ctx.fillText("Game Over", 200, 200);
 
   }

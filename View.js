@@ -7,7 +7,10 @@ class View {
    * Affihche le jeu pour l'utilisateur
    * @param {*} matrice
    */
-  afficherLeJeu(matrice,couleur) {
+  afficherLeJeu(matrice, couleur) {
+    if (!couleur) {
+      couleur = "vert"
+    }
     //var jeu = document.getElementById("jeu");
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
@@ -16,10 +19,10 @@ class View {
     fond.src = 'ressources/boardgame.png';
 
     var teteSerp = new Image();
-    teteSerp.src = 'ressources/headsnake-'+couleur+'.png';
+    teteSerp.src = 'ressources/headsnake-' + couleur + '.png';
 
     var corpsSerp = new Image();
-    corpsSerp.src = 'ressources/bodysnake-'+couleur+'.png';
+    corpsSerp.src = 'ressources/bodysnake-' + couleur + '.png';
 
     var fruit = new Image();
     fruit.src = 'ressources/food.png';
@@ -27,7 +30,7 @@ class View {
     fond.onload = () => {
       for (var i = 0; i < matrice.length; i++) {
         for (var j = 0; j < matrice.length; j++) {
-            ctx.drawImage(fond, (i +3) * 30, (j +3) * 30, 30, 30);
+          ctx.drawImage(fond, (i + 3) * 30, (j + 3) * 30, 30, 30);
         }
       }
     }
@@ -68,6 +71,9 @@ class View {
  * @param {*} matrice
  */
   actualiserLeJeu(matrice, couleur) {
+    if (!couleur) {
+      couleur = "vert"
+    }
     //var jeu = document.getElementById("jeu");
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
@@ -77,10 +83,10 @@ class View {
     fond.src = 'ressources/boardgame.png';
 
     var teteSerp = new Image();
-    teteSerp.src = 'ressources/headsnake-'+couleur+'.png';
+    teteSerp.src = 'ressources/headsnake-' + couleur + '.png';
 
     var corpsSerp = new Image();
-    corpsSerp.src = 'ressources/bodysnake-'+couleur+'.png';
+    corpsSerp.src = 'ressources/bodysnake-' + couleur + '.png';
 
     var fruit = new Image();
     fruit.src = 'ressources/food.png';
@@ -130,7 +136,7 @@ class View {
     for (var i = 0; i < matrice.length; i++) {
       for (var j = 0; j < matrice.length; j++) {
 
-          ctx.drawImage(fond, (i + 3) * 30, (j + 3) * 30, 30, 30);
+        ctx.drawImage(fond, (i + 3) * 30, (j + 3) * 30, 30, 30);
 
       }
     }
@@ -144,7 +150,7 @@ class View {
    * Affiche le score sur la partie droite de l'écran
    * @param {*} score
    */
-  actualiserLeScore(score){
+  actualiserLeScore(score) {
     document.getElementById('affScore').innerHTML = "Score actuel : " + score
   }
 
@@ -153,7 +159,7 @@ class View {
    * Affiche le record sur la partie droite de l'écran
    * @param {*} score
    */
-  actualiserLeScoreMax(score){
+  actualiserLeScoreMax(score) {
     document.getElementById('affScoreMax').innerHTML = "Score max : " + score;
   }
 

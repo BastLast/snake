@@ -8,8 +8,6 @@
 </head>
 
 <body>
-
-
   <div class="error">
     <div class="alert alert-info">
       <strong>Erreur !</strong> Veuillez passer en plein écran pour jouer !
@@ -26,13 +24,13 @@
     <label id="affScore" class="texte">Score actuel :</label>
     <label id="affScoreMax" class="texte">Score max :</label>
 
-    <img src="ressources/headsnake-vert.png" class="iconsSkin" onclick="localStorage.setItem('couleur', 'vert')">
-    <img src="ressources/headsnake-bleu.png" class="iconsSkin" onclick="localStorage.setItem('couleur', 'bleu')">
-    <img src="ressources/headsnake-orange.png" class="iconsSkin" onclick="localStorage.setItem('couleur', 'orange')">
+    <img id="vert" src="ressources/headsnake-vert.png" class="iconsSkin"
+      onclick="localStorage.setItem('couleur', 'vert');app.view.animation('vert', 'bleu','orange')">
+    <img id="bleu" src="ressources/headsnake-bleu.png" class="iconsSkin"
+      onclick="localStorage.setItem('couleur', 'bleu');app.view.animation('bleu','vert','orange')">
+    <img id="orange" src="ressources/headsnake-orange.png" class="iconsSkin"
+      onclick="localStorage.setItem('couleur', 'orange');app.view.animation('orange','vert', 'bleu')">
   </div>
-
-
-
 </body>
 <footer>
   <script src="Serpent.js"></script>

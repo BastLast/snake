@@ -7,7 +7,7 @@ class View {
    * Initialisation de l'affichage du jeu
    * @param {*} matrice
    */
-  async afficherLeJeu(matrice, couleur) {
+  afficherLeJeu(matrice, couleur) {
     couleur = this.chargerCouleurParDefaut(couleur);
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
@@ -188,6 +188,18 @@ class View {
    */
   actualiserLeScoreMax(score) {
     document.getElementById('affScoreMax').innerHTML = "Score max : " + score;
+  }
+
+  /**
+   * Permet d'afficher la couleur de serpent selectionnée
+   * @param {*} idSelected 
+   * @param {*} idUnselected1 
+   * @param {*} idUnselected2 
+   */
+  animation(idSelected, idUnselected1, idUnselected2) {
+    document.getElementById(idSelected).className = 'iconsSkin selected';
+    document.getElementById(idUnselected1).className = 'iconsSkin unSelected';
+    document.getElementById(idUnselected2).className = 'iconsSkin unSelected';
   }
 
 }

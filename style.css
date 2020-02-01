@@ -131,3 +131,17 @@ body {
   background-size: 30px;
   overflow: hidden;
 }
+
+.selected{
+  border: #fff;
+  border-style: solid;
+	border-radius: 5px;
+	transition: all .3s ease-in-out;
+}
+
+.unSelected{
+  border: #000;
+  border-style: solid;
+	border-radius: 5px;
+	transition: all .3s ease-in-out;
+}

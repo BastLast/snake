@@ -33,6 +33,24 @@ class Controller {
 let app = new Controller(new Model(), new View());
 
 app.afficherLeJeu();
+restoreSelectedSnake();
+
+/**
+ * affiche le snake qui est selectionné à partir de la sauvegarde
+ */
+function restoreSelectedSnake() {
+  switch (localStorage.getItem('couleur')) {
+    case "vert":
+      app.view.animation('vert', 'orange', 'bleu');
+      break;
+    case "bleu":
+      app.view.animation('bleu', 'vert', 'orange');
+      break;
+    case "orange":
+      app.view.animation('orange', 'vert', 'bleu');
+      break;
+  }
+}
 
 /**
  * Permet d'executer le jeu
@@ -68,7 +86,7 @@ document.addEventListener('keydown', (event) => {
     default:
       break;
   }
-  app.model.serpent.changerDirection(nouvelleDirection)
+  app.model.serpent.changerDirection(nouvelleDirection);
 }, false);
 
 let interval = setInterval(jeu, 150);
@@ -83,3 +101,7 @@ restartButton.onclick = function () {
   clearInterval(interval);
   interval = setInterval(jeu, 150);
 };
+
+
+
+

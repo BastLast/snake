@@ -3,6 +3,7 @@ class Serpent {
     constructor() {
         this.size = 3;
         this.direction = "est";
+        this.previousdirection = "est";
         this.positions = new Array();
         this.positions.push(new Case(8, 2, false, true));
         this.positions.push(new Case(8, 3, false, true));
@@ -50,22 +51,22 @@ class Serpent {
     changerDirection(nouvelleDirection) {
         switch (nouvelleDirection) {
             case "est":
-                if (this.direction != "ouest") {
+                if (this.previousdirection != "ouest") {
                     this.direction = nouvelleDirection;
                 }
                 break;
             case "sud":
-                if (this.direction != "nord") {
+                if (this.previousdirection != "nord") {
                     this.direction = nouvelleDirection;
                 }
                 break;
             case "nord":
-                if (this.direction != "sud") {
+                if (this.dirpreviousdirectionection != "sud") {
                     this.direction = nouvelleDirection;
                 }
                 break;
             case "ouest":
-                if (this.direction != "est") {
+                if (this.previousdirection != "est") {
                     this.direction = nouvelleDirection;
                 }
                 break;

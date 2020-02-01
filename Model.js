@@ -9,6 +9,7 @@ class Model {
    * Effectue un tour du jeu, déplace le serpent et vérifie que le joueur n'a pas perdu ou mangé de fruit
    */
   deplacerSerpent() {
+    this.serpent.previousdirection = this.serpent.direction;
     this.serpent.avancer();
     if (!this.serpentMangeFruit()) {
       // Si le serpent ne mange pas de fruit il faut faire avancer la queue du serpent

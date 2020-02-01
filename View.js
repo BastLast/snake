@@ -4,28 +4,33 @@ class View {
   }
 
   /**
-   * Affihche le jeu pour l'utilisateur
+   * Initialisation de l'affichage du jeu
    * @param {*} matrice
    */
-  afficherLeJeu(matrice, couleur) {
-    var ctx;
-    var fond;
-    var teteSerp;
-    var corpsSerp;
-    var fruit;
-    ({ ctx, fond, teteSerp, corpsSerp, fruit, couleur } = this.chargerRessources(couleur));
+  async afficherLeJeu(matrice, couleur) {
+    couleur = this.chargerCouleurParDefaut(couleur);
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var fond = new Image();
+    var teteSerp = new Image();
+    var corpsSerp = new Image();
+    var fruit = new Image();
     fond.onload = () => {
       this.afficherFond(matrice, ctx, fond);
+      teteSerp.onload = () => {
+        this.afficherTete(matrice, ctx, teteSerp);
+      }
+      corpsSerp.onload = () => {
+        this.afficherCorp(matrice, ctx, corpsSerp);
+      }
+      fruit.onload = () => {
+        this.afficherFruit(matrice, ctx, fruit);
+      }
+      teteSerp.src = 'ressources/headsnake-' + couleur + '.png';
+      corpsSerp.src = 'ressources/bodysnake-' + couleur + '.png';
+      fruit.src = 'ressources/food.png';
     }
-    teteSerp.onload = () => {
-      this.afficherTete(matrice, ctx, teteSerp);
-    }
-    corpsSerp.onload = () => {
-      this.afficherCorp(matrice, ctx, corpsSerp);
-    }
-    fruit.onload = () => {
-      this.afficherFruit(matrice, ctx, fruit);
-    }
+    fond.src = 'ressources/boardgame.png';
   }
 
   /**
@@ -67,6 +72,7 @@ class View {
    * @param {*} teteSerp 
    */
   afficherTete(matrice, ctx, teteSerp) {
+
     for (var i = 0; i < matrice.length; i++) {
       for (var j = 0; j < matrice.length; j++) {
         if (matrice[j][i] == "T") {
@@ -136,6 +142,7 @@ class View {
     fruit.src = 'ressources/food.png';
     return { ctx, fond, teteSerp, corpsSerp, fruit, couleur };
   }
+
 
   /**
    * Affiche l'écran de Game Over

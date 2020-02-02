@@ -61,7 +61,7 @@ class Serpent {
                 }
                 break;
             case "nord":
-                if (this.dirpreviousdirectionection != "sud") {
+                if (this.previousdirection != "sud") {
                     this.direction = nouvelleDirection;
                 }
                 break;

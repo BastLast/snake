@@ -5,9 +5,9 @@ class Serpent {
         this.direction = "est";
         this.previousdirection = "est";
         this.positions = new Array();
-        this.positions.push(new Case(8, 2, false, true));
-        this.positions.push(new Case(8, 3, false, true));
-        this.positions.push(new Case(8, 4, false, true));
+        this.positions.push(new Case(8, 2));
+        this.positions.push(new Case(8, 3));
+        this.positions.push(new Case(8, 4));
     }
 
     /**
@@ -25,19 +25,19 @@ class Serpent {
         switch (this.direction) {
             case "est":
                 this.positions.push(
-                    new Case(tete.posX, tete.posY + 1, false, true));
+                    new Case(tete.posX, tete.posY + 1));
                 break;
             case "sud":
                 this.positions.push(
-                    new Case(tete.posX + 1, tete.posY, false, true));
+                    new Case(tete.posX + 1, tete.posY));
                 break;
             case "nord":
                 this.positions.push(
-                    new Case(tete.posX - 1, tete.posY, false, true));
+                    new Case(tete.posX - 1, tete.posY));
                 break;
             case "ouest":
                 this.positions.push(
-                    new Case(tete.posX, tete.posY - 1, false, true));
+                    new Case(tete.posX, tete.posY - 1));
                 break;
             default:
                 break;

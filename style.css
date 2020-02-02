@@ -3,6 +3,10 @@
   src: url("ressources/8-BIT WONDER.TTF");
 }
 
+button {
+  outline: none;
+}
+
 #jeu {
   display: none;
 }
@@ -22,10 +26,11 @@
     display: inline-block;
   }
 }
+
 .iconsSkin {
   margin-top: 30px;
   margin-right: 30px;
-  width:50px;
+  width: 50px;
 }
 
 #rightPart {
@@ -76,7 +81,18 @@
   width: 500px;
   border: 2px solid white;
   background-color: black;
-  ;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.smallbtn {
+  margin: 10px;
+  margin-top: 50px;
+  width: 150px;
+  border: 2px solid white;
+  background-color: black;
   color: white;
   padding: 14px 28px;
   font-size: 16px;
@@ -86,13 +102,48 @@
 /* Green */
 
 .success {
+  transition: all .3s ease-in-out;
   border-color: #4CAF50;
   color: green;
 }
 
-.success:hover {
+.successSelected {
+  transition: all .3s ease-in-out;
+  cursor: default;
   background-color: #4CAF50;
+  border-color: #4CAF50;
   color: white;
+}
+
+/* red */
+
+.danger {
+  transition: all .3s ease-in-out;
+  border-color: #f44336;
+  color: red;
+}
+
+.dangerSelected {
+  transition: all .3s ease-in-out;
+  cursor: default;
+  background-color: #f44336;
+  color: white;
+  border-color: #f44336;
+}
+
+/* white */
+
+.secondary {
+  transition: all .3s ease-in-out;
+  border-color: white;
+  color: white;
+}
+
+.secondarySelected {
+  transition: all .3s ease-in-out;
+  cursor: default;
+  background-color: white;
+  color: black;
   ;
 }
 
@@ -132,16 +183,17 @@ body {
   overflow: hidden;
 }
 
-.selected{
+.selected {
   border: #fff;
   border-style: solid;
-	border-radius: 5px;
-	transition: all .3s ease-in-out;
+  border-radius: 5px;
+  transition: all .3s ease-in-out;
 }
 
-.unSelected{
+.unSelected {
+  cursor: pointer;
   border: #000;
   border-style: solid;
-	border-radius: 5px;
-	transition: all .3s ease-in-out;
+  border-radius: 5px;
+  transition: all .3s ease-in-out;
 }

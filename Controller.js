@@ -34,6 +34,7 @@ let app = new Controller(new Model(), new View());
 
 app.afficherLeJeu();
 restoreSelectedSnake();
+restoreDifficulte();
 
 /**
  * affiche le snake qui est selectionné à partir de la sauvegarde
@@ -49,6 +50,27 @@ function restoreSelectedSnake() {
     case "orange":
       app.view.animation('orange', 'vert', 'bleu');
       break;
+    default:
+      app.view.animation('vert', 'orange', 'bleu');
+  }
+}
+
+/**
+ * Affiche la difficulté qui a été selectionnée à partir de la sauvegarde
+ */
+function restoreDifficulte() {
+  switch (localStorage.getItem('difficulte')) {
+    case "facile":
+      app.view.animationButton('facile', 'normal', 'difficile');
+      break;
+    case "normal":
+      app.view.animationButton('normal', 'facile', 'difficile');
+      break;
+    case "difficile":
+      app.view.animationButton('difficile', 'normal', 'facile');
+      break;
+    default:
+      app.view.animationButton('facile', 'normal', 'difficile');
   }
 }
 
@@ -89,7 +111,8 @@ document.addEventListener('keydown', (event) => {
   app.model.serpent.changerDirection(nouvelleDirection);
 }, false);
 
-let interval = setInterval(jeu, 150);
+let speed = obtenirVitesse();
+let interval = setInterval(jeu, speed);
 let restartButton = document.getElementById('restartButton');
 
 /**
@@ -99,9 +122,30 @@ restartButton.onclick = function () {
   app = new Controller(new Model(), new View());
   app.afficherLeJeu();
   clearInterval(interval);
-  interval = setInterval(jeu, 150);
+  let speed = obtenirVitesse();
+  interval = setInterval(jeu, speed);
 };
 
 
 
+/**
+ * Permet de recuperer la valeur de la vitesse à partir de la sauvegarde
+ */
+function obtenirVitesse() {
+  let speed;
+  switch (localStorage.getItem('difficulte')) {
+    case "facile":
+      speed = 150;
+      break;
+    case "normal":
+      speed = 100;
+      break;
+    case "difficile":
+      speed = 75;
+      break;
+    default:
+      speed = 150;
+  }
+  return speed;
+}
 

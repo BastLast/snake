@@ -202,4 +202,33 @@ class View {
     document.getElementById(idUnselected2).className = 'iconsSkin unSelected';
   }
 
+
+  /**
+  * Permet d'afficher la difficultée selectionnée
+  * @param {*} idSelected 
+  * @param {*} idUnselected1 
+  * @param {*} idUnselected2 
+  */
+  animationButton(idSelected, idUnselected1, idUnselected2) {
+    switch (idSelected) {
+      case "facile":
+        document.getElementById(idSelected).className = 'smallbtn successSelected';
+        document.getElementById(idUnselected1).className = 'smallbtn secondary';
+        document.getElementById(idUnselected2).className = 'smallbtn danger';
+        break;
+      case "normal":
+        document.getElementById(idSelected).className = 'smallbtn secondarySelected';
+        document.getElementById(idUnselected1).className = 'smallbtn success';
+        document.getElementById(idUnselected2).className = 'smallbtn danger';
+        break;
+      case "difficile":
+        document.getElementById(idSelected).className = 'smallbtn dangerSelected';
+        document.getElementById(idUnselected1).className = 'smallbtn success';
+        document.getElementById(idUnselected2).className = 'smallbtn secondary';
+        break;
+      default:
+        break;
+    }
+
+  }
 }

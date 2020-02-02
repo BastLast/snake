@@ -30,6 +30,17 @@
       onclick="localStorage.setItem('couleur', 'bleu');app.view.animation('bleu','vert','orange')">
     <img id="orange" src="ressources/headsnake-orange.png" class="iconsSkin"
       onclick="localStorage.setItem('couleur', 'orange');app.view.animation('orange','vert', 'bleu')">
+    <div>
+      <button id="facile" class="smallbtn success" type="button" onclick="localStorage.setItem('difficulte', 'facile');app.view.animationButton('facile', 'normal','difficile')">
+        Facile
+      </button>
+      <button id="normal" class="smallbtn secondary" type="button" onclick="localStorage.setItem('difficulte', 'normal');app.view.animationButton('normal', 'facile','difficile')">
+        Normal
+      </button>
+      <button id="difficile" class="smallbtn danger" type="button" onclick="localStorage.setItem('difficulte', 'difficile');app.view.animationButton('difficile', 'normal','facile')">
+        Difficile
+      </button>
+    </div>
   </div>
 </body>
 <footer>

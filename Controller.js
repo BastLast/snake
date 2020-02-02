@@ -67,7 +67,7 @@ function restoreDifficulte() {
       app.view.animationButton('normal', 'facile', 'difficile');
       break;
     case "difficile":
-      app.view.animationButton('difficile', 'normal', 'facile');
+      app.view.animationButton('difficile', 'facile', 'normal');
       break;
     default:
       app.view.animationButton('facile', 'normal', 'difficile');
